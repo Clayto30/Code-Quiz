@@ -14,11 +14,9 @@ to you. Unfortunately, our ability to enter initials and save them to the page i
 quiz presented quite a challenge, and I was left with too little time. I hope y'all can understand! ;) 
 ​
 ​The application is deployed at 
-(https://guides.github.com/features/mastering-markdown/).
+(https://clayto30.github.io/Code-Quiz/).
 ​​
 ## Table of Contents (Optional)
-​
-If your README is very long, add a table of contents to make it easy for users to find what they need.
 ​
 * [Installation](#installation)
 * [Usage](#usage)
