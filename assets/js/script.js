@@ -5,17 +5,16 @@ let time = 120
 var countdownEl = document.getElementById("countdown")
 var lessTime = function() {time--, addCountdownEl.textContent = "Time: " + time;
     countdownEl.appendChild (addCountdownEl);
-        if (time <= 0) {
+        if (time <= 0 || buttonsClicked >= 5) {
+            stopStopStop;
             endQuiz();
-            stopStopStop
-            console.log("out of time");
             var stopStopStop = clearInterval(countingDown)}
             }           
 var countingDown = setInterval(lessTime, 1000);
 var addCountdownEl = document.createElement("p");
 var gradeEl = document.getElementById("grade")
 var addGradeEl = document.createElement("h1");
-
+let buttonsClicked = 0;
     
 
 // array with questions and answers 
@@ -69,6 +68,7 @@ displayQuestion = function () {
 }
 var submitAnswer = function () {
     console.log(this.innerText);
+    buttonsClicked++;
     if (this.innerText == questions[currentQuestion].correctAnswer) {
         gradeEl.textContent = "Correct!"
         gradeEl.appendChild (addGradeEl);
@@ -78,60 +78,37 @@ var submitAnswer = function () {
         gradeEl.textContent = "Wrong!"
         gradeEl.appendChild (addGradeEl);
         time -= 10;
-
     }
     
-        if (currentQuestion < questions.length - 1) {
-            console.log(questions.length)
-            currentQuestion++;
-            displayQuestion();
-        }
-        else if (currentQuestion = questions.length) {
-        winQuiz()
+    if (currentQuestion < questions.length - 1) {
+        console.log(questions.length)
+        currentQuestion++;
+        displayQuestion();
     }
-//submitAnswer = function () {
-    // check and see if answer submmitted is correct, if not, take sand out of hourglass, this.dataType.answer should get me the value I'm looking for , if answer is = current index answer... 
-    //this.dataType.answer;
-    //console.log(this.dataType.yourAnswer);
-    //if (this.dataType.answer === questions[currentQuestion].correctAnswer) {
-       // console.log("correct!")
-    // if the timer is zero, end quiz
-   // if (time <= 0) {endQuiz};
-   // if (yourAnswer !== questions[currentQuestion].correctAnswer) {
-       // time -= 15;
-   // }
-   // if (currentQuestion <= questions.length) {
-   // if (currentQuestion <= questions.length) {setInterval(displayQuestion(), 1000);
-   // }
-    // if the timer is not zero , increment to next question in array, and display next question to user
-    
 };
-//}
-
-
 
 //dynamically create question
 displayQuestion();
 
-// Below this is stuff I tried to get from class
 // if score equals zero or we win, we call this endQuiz function
 var endQuiz = function() {
+        if (time <= 0) {
         gradeEl.textContent = "You have lost! That's ok, try again!"
         gradeEl.appendChild (addGradeEl);
-    }
-var winQuiz = function() {
+    };
+    if (time > 0) {
     console.log("You win! :)")
-    stopStopStop;
-    //gradeEl.textContent = "You won! Please input your initials to submit your score to the high scores!"
-    //gradeEl.appendChild (addGradeEl);
-}
+    gradeEl.textContent = "You won! Your score is " + time + "! Please input your initials to submit your score to the high scores!";
+    gradeEl.appendChild (addGradeEl);
+    }
+};
    
    // initialEl.innerText = "";
     //questionsEl.innerText = "Enter your initials";
-    var newTextField = document.createElement("input");
-    newTextField.id = "initials";
-    var submitButton = document.createElement("button");
-    submitButton.addEventListener("click", saveScore);
+   // var newTextField = document.createElement("input");
+    // newTextField.id = "initials";
+    // var submitButton = document.createElement("button");
+    // submitButton.addEventListener("click", saveScore);
     //questionEl.appendChild(newTextField);
     //
 
@@ -140,13 +117,13 @@ var winQuiz = function() {
     //leaderBoard = [name, score] // score might change to time or timeLeft
 
     //localStorage.setItem('leaderBoard', JSON.stringify(leaderboard))}
-    var initialDataObj = {
-        initials: initialInput,
-        score: timeInput
-    }
-    var saveInitials = function() {
-        localStorage.setItem("initials", initials);
-    }
+    //var initialDataObj = {
+      //  initials: initialInput,
+      //  score: timeInput
+    //}
+    //var saveInitials = function() {
+        //localStorage.setItem("initials", initials);
+   // }
     
 
     // timer counts down
