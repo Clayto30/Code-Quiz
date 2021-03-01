@@ -1,7 +1,7 @@
 var questionsEl = document.getElementById("questions")
 var currentQuestion = 0
 var answersEl = document.getElementById("answers")
-let time = 10
+let time = 120
 var countdownEl = document.getElementById("countdown")
 var lessTime = function() {time--, addCountdownEl.textContent = "Time: " + time;
     countdownEl.appendChild (addCountdownEl);
