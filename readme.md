@@ -33,11 +33,13 @@ answer that you think is right. The pressure is on!
 ​​
 ## Usage 
 ​
-Provide instructions and examples for use. Include screenshots as needed. 
+Please feel free to get the questions wrong and let the timer run out!
+
+If you succeed and answer questions before the timer runs out, you will get your score reported back to you 
+dynamically on the page. Pretty neat! Try to get a great, big number. Maybe you can exceed what I show in my image :)
+Good luck!
 ​
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-​
-[alt text](assets/images/screenshot.jpg)
+![image](./assets/images/image.jpg)
 ​
 ## Credits
 ​
