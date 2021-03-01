@@ -1,7 +1,7 @@
 var questionsEl = document.getElementById("questions")
 var currentQuestion = 0
 var answersEl = document.getElementById("answers")
-let time = 120
+let time = 10
 var countdownEl = document.getElementById("countdown")
 var lessTime = function() {time--, addCountdownEl.textContent = "Time: " + time;
     countdownEl.appendChild (addCountdownEl);
@@ -80,9 +80,11 @@ var submitAnswer = function () {
         time -= 10;
 
     }
-    currentQuestion++;
-        if (currentQuestion < questions.length) {
-        displayQuestion();
+    
+        if (currentQuestion < questions.length - 1) {
+            console.log(questions.length)
+            currentQuestion++;
+            displayQuestion();
         }
         else if (currentQuestion = questions.length) {
         winQuiz()
@@ -119,6 +121,7 @@ var endQuiz = function() {
     }
 var winQuiz = function() {
     console.log("You win! :)")
+    stopStopStop;
     //gradeEl.textContent = "You won! Please input your initials to submit your score to the high scores!"
     //gradeEl.appendChild (addGradeEl);
 }
@@ -145,3 +148,10 @@ var winQuiz = function() {
         localStorage.setItem("initials", initials);
     }
     
+
+    // timer counts down
+    // you get five questions
+    // get it right + 15 seconds
+    // get it wrong - 10 seconds
+    // counter gets to 0, you lose, that's ok try again!
+    // once you've answered all 5 questions, time stops and I can take that nuber and say "Youre score is ____"
